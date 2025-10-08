@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student ID Card Generator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Student ID Card Maker</h1>
+      <p class="subtitle">Create Student ID cards in seconds</p>
+    </header>
+
+    <div class="app-container">
+      <!-- Form Section -->
+      <section class="form-section fade-in">
+        <h2>ID Card Details</h2>
+
+        <!-- Card Title -->
+        <div class="form-group">
+          <label for="cardTitle">Card Title</label>
+          <input type="text" id="cardTitle" placeholder="e.g., Student ID Card" value="Student ID Card">
+        </div>
+
+        <!-- Student Name -->
+        <div class="form-group">
+          <label for="name">Student Name</label>
+          <input type="text" id="name" placeholder="Enter student name">
+        </div>
+
+        <!-- College -->
+        <div class="form-group">
+          <label for="college">College/Institution</label>
+          <input type="text" id="company" placeholder="Enter College Name">
+        </div>
+
+        <!-- Course -->
+        <div class="form-group">
+          <label for="purpose">Course Name</label>
+          <input type="text" id="purpose" placeholder="B.Sc, BA, BCA, BBA etc.">
+        </div>
+
+        <!-- DOB -->
+        <div class="form-group">
+          <label for="contact">Date of Birth</label>
+          <input type="date" id="contact">
+        </div>
+
+        <!-- Valid Until -->
+        <div class="form-group">
+          <label for="validUntil">Valid Until</label>
+          <input type="date" id="validUntil">
+        </div>
+        <div class="form-group">
+  <label for="photo">Upload Photo</label>
+  <input type="file" id="photo" accept="image/*">
+</div>
+
+
+        <!-- Contact No -->
+        <div class="form-group">
+          <label for="additionalInfo">Contact No.</label>
+          <input type="text" id="additionalInfo" placeholder="Enter Contact No.">
+        </div>
+
+        <!-- Include QR -->
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="includeQR" checked>
+            Include QR Code
+          </label>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-group">
+          <button id="generateBtn" class="btn btn-block">Generate Card</button>
+          <button id="resetBtn" class="btn btn-outline">Reset</button>
+        </div>
+      </section>
+
+      <!-- Preview Section -->
+      <section class="preview-section fade-in" style="animation-delay:0.2s;">
+        <h2>Card Preview</h2>
+        <div class="card-container" id="card">
+          <div class="card-header">
+            <h2 id="cardTitleDisplay">Student ID Card</h2>
+          </div>
+          <div class="card-photo">
+  <div class="photo-placeholder">
+    <i class="fas fa-user"></i>
+  </div>
+</div>
+
+          <div class="card-body">
+            <p class="name">NAME</p>
+            <p class="college">College Name</p>
+            <p><strong>Course:</strong> <span id="purposeDisplay">B.Sc</span></p>
+            <p><strong>D.O.B:</strong> <span id="contactDisplay">01/01/2000</span></p>
+            <p><strong>Valid Until:</strong> <span id="validUntilDisplay">31/12/2025</span></p>
+            <p><strong>Contact: </strong><span id="additionalInfoDisplay">92XXXXXXXX</span></p>
+          </div>
+          <div class="qr-code" id="qrCodeDisplay">
+            <img src="" alt="QR Code">
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <button id="downloadBtn" class="btn">
+            <i class="fas fa-download"></i> Download
+          </button>
+          <button id="saveTemplateBtn" class="btn btn-outline">
+            <i class="fas fa-save"></i> Save in Database
+          </button>
+          <button onclick="window.location.href='get_visitors.php'" class="btn btn-warning">
+            <i class="fas fa-database"></i> View Saved Data
+             
+</button>
+
+          </button>
+          
+
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
